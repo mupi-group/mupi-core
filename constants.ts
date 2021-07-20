@@ -1,0 +1,4 @@
+export const MUPI_MODEL_DESCRIPTION = Symbol('MUPI_MODEL_DESCRIPTION');
+export const MUPI_MODEL_TITLE = Symbol('MUPI_MODEL_TITLE');
+export const MUPI_MODEL_IF_UPLOAD = Symbol('MUPI_MODEL_IF_UPLOAD');
+export const MUPI_MODEL_ITEM_ID = Symbol('MUPI_MODEL_ITEM_ID');

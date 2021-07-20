@@ -1,0 +1,25 @@
+node_modules/
+.idea/
+/.vscode
+/.github
+
+.gitignore
+.prettierrc
+.DS_Store
+CONTRIBUTE.md
+
+# source
+/actions
+/bin
+/commands
+/lib
+/test
+
+# configuration
+.eslintrc.js
+renovate.json
+tsconfig.json
+tools
+jest.config.ts
+tsconfig.eslint.json
+webpack.config.ts
