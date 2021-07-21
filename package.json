@@ -1,9 +1,9 @@
 {
   "name": "@mupi/core",
-  "version": "0.0.2-alpha.5",
+  "version": "0.0.2-alpha.6",
   "description": "mupi core decorators",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc --project tsconfig.json"
   },
   "main": "build/index.js",
   "keywords": [],
