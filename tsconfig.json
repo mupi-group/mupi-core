@@ -5,7 +5,6 @@
     "removeComments": true,
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
-    "emitDeclarationOnly": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "target": "es6",
