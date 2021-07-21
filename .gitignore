@@ -8,3 +8,4 @@ schematics/
 build/
 
 .DS_Store
+tsconfig.tsbuildinfo
