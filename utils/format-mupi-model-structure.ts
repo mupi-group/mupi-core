@@ -34,7 +34,7 @@ FormattedMupiModelStructure | boolean {
         key,
         id: key === id,
         description: items[key],
-        upload: !!uploads[key],
+        upload: uploads ? !!uploads[key] : false,
       });
     }
 
