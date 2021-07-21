@@ -1,6 +1,6 @@
 {
   "name": "@mupi/core",
-  "version": "0.0.2-alpha.12",
+  "version": "0.0.2-alpha.13",
   "description": "mupi core decorators",
   "scripts": {
     "build": "tsc --project tsconfig.json"
@@ -22,9 +22,5 @@
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "@types/eslint": "^7.2.14"
-  },
-  "peerDependencies": {
-    "typescript": "^3.4.5 || ^4.3.5",
-    "reflect-metadata": "^0.1.13"
   }
 }
