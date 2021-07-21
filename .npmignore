@@ -9,17 +9,18 @@ node_modules/
 CONTRIBUTE.md
 
 # source
-/actions
-/bin
+/utils
+/decorators
 /commands
-/lib
 /test
 
 # configuration
 .eslintrc.js
+.eslintrcignore
 renovate.json
 tsconfig.json
 tools
 jest.config.ts
 tsconfig.eslint.json
 webpack.config.ts
+*.ts
