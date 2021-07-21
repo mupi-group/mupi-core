@@ -2,14 +2,14 @@ import {
   MUPI_MODEL_DESCRIPTION, MUPI_MODEL_IF_UPLOAD, MUPI_MODEL_ITEM_ID, MUPI_MODEL_TITLE,
 } from '../constants';
 
-type FormattedMupiModelItemStructure = {
+export type FormattedMupiModelItemStructure = {
   key: string;
   description: string;
   upload?: boolean;
   id?: boolean;
 };
 
-type FormattedMupiModelStructure = {
+export type FormattedMupiModelStructure = {
   title: string;
   subtitle?: string;
   items: FormattedMupiModelItemStructure[]

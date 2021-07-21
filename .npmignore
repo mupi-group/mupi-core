@@ -24,3 +24,5 @@ tools
 jest.config.ts
 tsconfig.eslint.json
 webpack.config.ts
+./index/ts
+./constant.ts
