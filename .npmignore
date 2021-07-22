@@ -3,9 +3,11 @@ node_modules/
 /.vscode
 /.github
 
+yarn.lock
 .gitignore
 .prettierrc
 .DS_Store
+yarn-error.log
 CONTRIBUTE.md
 
 tsconfig.tsbuildinfo
@@ -24,5 +26,5 @@ tools
 jest.config.ts
 tsconfig.eslint.json
 webpack.config.ts
-./index/ts
-./constant.ts
+./index.ts
+./constants.ts

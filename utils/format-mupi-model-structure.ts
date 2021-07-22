@@ -40,7 +40,6 @@ FormattedMupiModelStructure | boolean {
 
     return formatted;
   } catch (e){
-    console.log(e);
     return false;
   }
 }
