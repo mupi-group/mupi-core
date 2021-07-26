@@ -4,7 +4,7 @@
   "description": "mupi core decorators",
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "start": "ts-node index.ts"
+    "start": "ts-node validation.ts"
   },
   "main": "build/index.js",
   "keywords": [],
