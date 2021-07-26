@@ -3,7 +3,8 @@
   "version": "0.0.2-alpha.14",
   "description": "mupi core decorators",
   "scripts": {
-    "build": "tsc --project tsconfig.json"
+    "build": "tsc --project tsconfig.json",
+    "start": "ts-node index.ts"
   },
   "main": "build/index.js",
   "keywords": [],

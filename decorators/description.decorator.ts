@@ -9,6 +9,7 @@ export function Description(description?: DescriptionOptions | string): Property
     _,
     propertyKey,
   ) => {
+    const { name: type } = Reflect.getMetadata('design:type', _, propertyKey);
     const descriptionOptions = description as DescriptionOptions;
     const descriptionName = (descriptionOptions && descriptionOptions.description)
             || (typeof description === 'string' && description)
@@ -18,7 +19,7 @@ export function Description(description?: DescriptionOptions | string): Property
 
     Reflect.defineMetadata(
       MUPI_MODEL_DESCRIPTION,
-      { ...definedMetadata, [propertyKey]: descriptionName },
+      { ...definedMetadata, [propertyKey]: { name: descriptionName, type } },
       _,
     );
   };

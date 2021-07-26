@@ -5,6 +5,7 @@ import {
 export type FormattedMupiModelItemStructure = {
   key: string;
   description: string;
+  type: string;
   upload?: boolean;
   id?: boolean;
 };
@@ -21,7 +22,9 @@ FormattedMupiModelStructure | boolean {
     const formatted = { items: [] } as FormattedMupiModelStructure;
     const { title, subtitle } = Reflect.getMetadata(MUPI_MODEL_TITLE, MupiModel);
     const items:
-    { [key: string]: string } = Reflect.getMetadata(MUPI_MODEL_DESCRIPTION, MupiModel.prototype);
+    { [key: string]
+    : { name: string, type: string }
+    } = Reflect.getMetadata(MUPI_MODEL_DESCRIPTION, MupiModel.prototype);
     const uploads = Reflect.getMetadata(MUPI_MODEL_IF_UPLOAD, MupiModel.prototype);
     const id = Reflect.getMetadata(MUPI_MODEL_ITEM_ID, MupiModel.prototype);
 
@@ -33,13 +36,14 @@ FormattedMupiModelStructure | boolean {
       formatted.items.push({
         key,
         id: key === id,
-        description: items[key],
+        description: items[key].name,
+        type: items[key].type,
         upload: uploads ? !!uploads[key] : false,
       });
     }
 
     return formatted;
-  } catch (e){
+  } catch (e) {
     return false;
   }
 }
