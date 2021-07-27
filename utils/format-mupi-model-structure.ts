@@ -11,6 +11,7 @@ export type FormattedMupiModelItemStructure = {
   description: string;
   type: string;
   graphqlType?: string;
+  typescriptType?: string;
   upload?: boolean;
   id?: boolean;
   listed?: boolean;
@@ -28,6 +29,14 @@ export enum MupiGraphQLType {
   IntList = '[Int]',
   StringList = '[String]',
   ID = 'String!',
+}
+
+export enum MupiTypescriptType {
+  Number = 'number',
+  String = 'string',
+  NumberList = 'number[]',
+  StringList = 'string[]',
+  ID = 'string',
 }
 
 export function getGraphQLType(type: string, listed: boolean, identifier: boolean): string {
@@ -56,6 +65,32 @@ export function getGraphQLType(type: string, listed: boolean, identifier: boolea
   }
 }
 
+export function getTypescriptType(type: string, listed: boolean, identifier: boolean): string {
+  if (identifier) return MupiTypescriptType.ID;
+
+  if (listed) {
+    switch (type) {
+      case 'String':
+        return MupiTypescriptType.StringList;
+      case 'Number':
+        return MupiTypescriptType.NumberList;
+        // todo: give default list type a scalar
+      default:
+        return MupiTypescriptType.StringList;
+    }
+  } else {
+    switch (type) {
+      case 'String':
+        return MupiTypescriptType.String;
+      case 'Number':
+        return MupiTypescriptType.Number;
+        // todo: give default type a scalar
+      default:
+        return MupiTypescriptType.String;
+    }
+  }
+}
+
 export function formatThenResolveMupiModelStructure(MupiModel):
 FormattedMupiModelStructure | boolean {
   try {
@@ -72,8 +107,6 @@ FormattedMupiModelStructure | boolean {
     formatted.title = title;
     formatted.subtitle = subtitle;
 
-    console.log(listedList);
-
     // eslint-disable-next-line guard-for-in,no-restricted-syntax
     for (const key in items) {
       formatted.items.push({
@@ -82,6 +115,11 @@ FormattedMupiModelStructure | boolean {
         description: items[key].name,
         type: items[key].type,
         graphqlType: getGraphQLType(
+          items[key].type,
+          (listedList ? !!listedList[key] : false),
+          key === id,
+        ),
+        typescriptType: getTypescriptType(
           items[key].type,
           (listedList ? !!listedList[key] : false),
           key === id,
