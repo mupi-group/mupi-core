@@ -1,14 +1,14 @@
 {
   "name": "@mupi/core",
-  "version": "0.0.3",
-  "description": "mupi core decorators",
+  "version": "0.0.4",
+  "description": "The submodule of @mupi/cli, including mupi core decorators and utils.",
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "start": "ts-node validation.ts"
   },
   "main": "build/index.js",
   "keywords": [],
-  "author": "mupi",
+  "author": "mupijs",
   "license": "ISC",
   "dependencies": {
     "reflect-metadata": "^0.1.13",
